@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight leading-tight;
+  }
+
+  p {
+    @apply leading-relaxed;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 mx-auto sm:px-6 lg:px-8;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.75s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Markdown styles for chat messages */
+.prose {
+  @apply text-sm;
+}
+
+.prose p {
+  @apply my-1;
+}
+
+.prose ul {
+  @apply list-disc pl-4 my-1;
+}
+
+.prose ol {
+  @apply list-decimal pl-4 my-1;
+}
+
+.prose li {
+  @apply my-0.5;
+}
+
+.prose code {
+  @apply px-1 py-0.5 bg-gray-100 dark:bg-gray-800 rounded;
+}
+
+.prose pre {
+  @apply p-2 bg-gray-100 dark:bg-gray-800 rounded overflow-x-auto;
+}
+
+.prose blockquote {
+  @apply border-l-4 border-gray-300 dark:border-gray-700 pl-4 my-2;
+}
